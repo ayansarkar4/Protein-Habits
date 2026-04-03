@@ -5,6 +5,7 @@ import Ourproduct from "./components/Ourproduct";
 import Testimonial from "./components/Testmonial";
 import Founders from "./components/Founders";
 import Review from "./components/Review";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Testimonial />
       <Founders />
       <Review />
+      <Footer />
     </div>
   );
 };

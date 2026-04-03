@@ -91,8 +91,8 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-orange-900 to-amber-900 pt-16 md:pt-20">
-      <div className="relative w-full h-full bg-black/50">
+    <section className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-orange-900 to-orange-950 pt-16 md:pt-20">
+      <div className="relative w-full h-full">
         <AnimatePresence initial={false} custom={direction} mode="popLayout">
           <motion.div
             key={currentIndex}
@@ -107,7 +107,7 @@ const Hero = () => {
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${slides[currentIndex].image})` }}
             >
-              <div className="absolute inset-0 bg-black/40 backdrop-brightness-90" />
+              <div className="absolute inset-0 bg-black/50" />
             </div>
 
             <motion.div
@@ -121,7 +121,7 @@ const Hero = () => {
                 className="text-4xl md:text-6xl lg:text-7xl font-black text-white drop-shadow-lg"
               >
                 {slides[currentIndex].titleLine1} <br />
-                <span className="bg-gradient-to-r from-orange-400 to-yellow-300 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text text-transparent">
                   {slides[currentIndex].titleLine2}
                 </span>
               </motion.h1>
@@ -144,7 +144,7 @@ const Hero = () => {
                 variants={textItemVariants}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="mt-10 bg-gradient-to-r from-orange-500 to-yellow-400 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2 group"
+                className="mt-10 bg-gradient-to-r from-orange-700 to-orange-500 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2 group"
               >
                 Shop Now
                 <span className="transition-transform group-hover:translate-x-1">
@@ -158,13 +158,13 @@ const Hero = () => {
 
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 backdrop-blur-md p-2 rounded-full text-white hover:bg-white/50 transition-all z-20 hover:scale-110"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md p-2 rounded-full text-white hover:bg-white/40 transition-all z-20 hover:scale-110 border border-white/20"
       >
         <ChevronLeft size={28} />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 backdrop-blur-md p-2 rounded-full text-white hover:bg-white/50 transition-all z-20 hover:scale-110"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md p-2 rounded-full text-white hover:bg-white/40 transition-all z-20 hover:scale-110 border border-white/20"
       >
         <ChevronRight size={28} />
       </button>
@@ -177,7 +177,7 @@ const Hero = () => {
             className={`transition-all rounded-full ${
               currentIndex === idx
                 ? "w-3 h-3 bg-white shadow-lg"
-                : "w-2 h-2 bg-white/50 hover:bg-white/80"
+                : "w-2 h-2 bg-white/40 hover:bg-white/70"
             }`}
             whileHover={{ scale: 1.2 }}
             animate={currentIndex === idx ? { scale: [1, 1.2, 1] } : {}}
@@ -187,7 +187,7 @@ const Hero = () => {
       </div>
 
       <motion.div
-        className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 z-20"
+        className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-orange-600 to-orange-400 z-20"
         initial={{ width: "0%" }}
         animate={{ width: "100%" }}
         transition={{
@@ -202,9 +202,9 @@ const Hero = () => {
       <motion.div
         animate={{ y: [0, -10, 0] }}
         transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 text-sm z-20 flex items-center gap-1 bg-black/20 backdrop-blur-sm px-3 py-1 rounded-full"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 text-sm z-20 flex items-center gap-1 bg-black/30 backdrop-blur-sm px-3 py-1 rounded-full"
       >
-        <Sparkles size={12} className="text-yellow-300" />
+        <Sparkles size={12} className="text-orange-300" />
         <span>🍗 Protein Snacks Available</span>
       </motion.div>
     </section>

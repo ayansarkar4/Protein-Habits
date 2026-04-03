@@ -62,8 +62,8 @@ const Navbar = () => {
         variants={navVariants}
         className={`fixed w-full top-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-white/90 backdrop-blur-xl shadow-2xl border-b border-orange-100/50"
-            : "bg-white/70 backdrop-blur-md border-b border-orange-100/30"
+            ? "bg-orange-950/90 backdrop-blur-xl shadow-2xl border-b border-orange-800/50"
+            : "bg-orange-900/70 backdrop-blur-md border-b border-orange-800/30"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,12 +83,12 @@ const Navbar = () => {
                 }}
                 className="relative"
               >
-                <Sparkles className="w-5 h-5 text-orange-500 absolute -top-2 -left-2 opacity-70 group-hover:opacity-100 transition-opacity" />
-                <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-yellow-400 rounded-lg flex items-center justify-center shadow-md">
+                <Sparkles className="w-5 h-5 text-orange-400 absolute -top-2 -left-2 opacity-70 group-hover:opacity-100 transition-opacity" />
+                <div className="w-8 h-8 bg-gradient-to-br from-orange-700 to-orange-500 rounded-lg flex items-center justify-center shadow-md">
                   <span className="text-white font-black text-sm">P</span>
                 </div>
               </motion.div>
-              <h1 className="text-xl md:text-2xl font-black bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-600 bg-clip-text text-transparent tracking-tight">
+              <h1 className="text-xl md:text-2xl font-black bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text text-transparent tracking-tight">
                 Protein Habits
               </h1>
             </motion.div>
@@ -103,12 +103,12 @@ const Navbar = () => {
                   initial="hidden"
                   animate="visible"
                   variants={itemVariants}
-                  className="relative group px-2 py-1 text-gray-700 font-medium text-sm lg:text-base transition-colors hover:text-orange-500"
+                  className="relative group px-2 py-1 text-gray-200 font-medium text-sm lg:text-base transition-colors hover:text-orange-300"
                   whileHover={{ y: -2 }}
                 >
                   {item}
                   <motion.span
-                    className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-full"
+                    className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full"
                     whileHover={{ width: "100%" }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   />
@@ -123,7 +123,7 @@ const Navbar = () => {
                 boxShadow: "0 10px 25px -5px rgba(249,115,22,0.3)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="hidden md:flex items-center gap-2 bg-gradient-to-r from-orange-500 to-yellow-400 text-white px-5 py-2 rounded-xl font-semibold shadow-md transition-all duration-300 relative overflow-hidden group"
+              className="hidden md:flex items-center gap-2 bg-gradient-to-r from-orange-700 to-orange-500 text-white px-5 py-2 rounded-xl font-semibold shadow-md transition-all duration-300 relative overflow-hidden group"
             >
               <ShoppingBag className="w-4 h-4 transition-transform group-hover:rotate-12" />
               Shop Now
@@ -141,7 +141,7 @@ const Navbar = () => {
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden relative w-10 h-10 flex items-center justify-center rounded-lg bg-orange-50 text-orange-500"
+              className="md:hidden relative w-10 h-10 flex items-center justify-center rounded-lg bg-orange-800/50 text-orange-300"
             >
               <AnimatePresence mode="wait">
                 {isOpen ? (
@@ -180,7 +180,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 md:hidden"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
               onClick={() => setIsOpen(false)}
             />
             <motion.div
@@ -188,13 +188,13 @@ const Navbar = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="fixed top-0 right-0 h-full w-64 bg-white/95 backdrop-blur-xl shadow-2xl z-50 md:hidden flex flex-col p-6 border-l border-orange-100"
+              className="fixed top-0 right-0 h-full w-64 bg-orange-950/95 backdrop-blur-xl shadow-2xl z-50 md:hidden flex flex-col p-6 border-l border-orange-800"
             >
               <div className="flex justify-end mb-8">
                 <motion.button
                   whileHover={{ rotate: 90 }}
                   onClick={() => setIsOpen(false)}
-                  className="p-2 text-gray-500"
+                  className="p-2 text-gray-300"
                 >
                   <X />
                 </motion.button>
@@ -209,7 +209,7 @@ const Navbar = () => {
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: i * 0.1 }}
                     whileHover={{ x: 8 }}
-                    className="text-gray-800 font-semibold text-lg py-2 border-b border-orange-100 flex justify-between items-center"
+                    className="text-gray-200 font-semibold text-lg py-2 border-b border-orange-800 flex justify-between items-center"
                     onClick={() => setIsOpen(false)}
                   >
                     {item}
@@ -221,7 +221,7 @@ const Navbar = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
                   whileTap={{ scale: 0.97 }}
-                  className="mt-6 bg-gradient-to-r from-orange-500 to-yellow-400 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg"
+                  className="mt-6 bg-gradient-to-r from-orange-700 to-orange-500 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg"
                 >
                   <ShoppingBag className="w-4 h-4" />
                   Shop Now

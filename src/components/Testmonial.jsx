@@ -95,8 +95,9 @@ const Testimonial = () => {
 
   return (
     <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-orange-50 via-white to-amber-50 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-64 h-64 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000" />
+      {/* ডেকোরেটিভ ব্লব – ডার্ক অরেঞ্জ */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-orange-800 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -106,18 +107,19 @@ const Testimonial = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
+          {/* ব্যাজ – ডার্ক অরেঞ্জ */}
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring" }}
-            className="inline-flex items-center gap-2 bg-orange-100 text-orange-600 text-sm font-bold px-4 py-1.5 rounded-full mb-4"
+            className="inline-flex items-center gap-2 bg-orange-800 text-orange-200 text-sm font-bold px-4 py-1.5 rounded-full mb-4"
           >
-            <Heart size={14} className="fill-orange-500" />
+            <Heart size={14} className="fill-orange-400" />
             Real Stories, Real Results
           </motion.div>
           <h2 className="text-3xl md:text-5xl font-black text-gray-800">
             What Our{" "}
-            <span className="bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-700 to-orange-500 bg-clip-text text-transparent">
               Customers Say
             </span>
           </h2>
@@ -136,13 +138,14 @@ const Testimonial = () => {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-orange-100 relative overflow-hidden"
+              className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-orange-200 relative overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl -z-10" />
+              {/* হোভার গ্রেডিয়েন্ট – ডার্ক অরেঞ্জ */}
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-800 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl -z-10" />
               <div className="absolute inset-[1px] bg-white rounded-2xl -z-10" />
               <div className="absolute top-4 right-4">
-                <div className="bg-orange-100 rounded-full p-2">
-                  <Quote size={20} className="text-orange-400" />
+                <div className="bg-orange-800 rounded-full p-2">
+                  <Quote size={20} className="text-orange-300" />
                 </div>
               </div>
               <div className="flex items-center gap-1 mb-4">
@@ -166,7 +169,7 @@ const Testimonial = () => {
                   <img
                     src={testimonial.avatar}
                     alt={testimonial.name}
-                    className="w-10 h-10 rounded-full object-cover ring-2 ring-orange-200"
+                    className="w-10 h-10 rounded-full object-cover ring-2 ring-orange-600"
                   />
                   {testimonial.verified && (
                     <div className="absolute -bottom-1 -right-1 bg-green-500 rounded-full p-0.5">
@@ -199,10 +202,10 @@ const Testimonial = () => {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-orange-100 relative"
+                className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-orange-200 relative"
               >
-                <div className="absolute top-4 right-4 bg-orange-100 rounded-full p-2">
-                  <Quote size={20} className="text-orange-400" />
+                <div className="absolute top-4 right-4 bg-orange-800 rounded-full p-2">
+                  <Quote size={20} className="text-orange-300" />
                 </div>
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -225,7 +228,7 @@ const Testimonial = () => {
                     <img
                       src={testimonials[currentIndex].avatar}
                       alt={testimonials[currentIndex].name}
-                      className="w-12 h-12 rounded-full object-cover ring-2 ring-orange-200"
+                      className="w-12 h-12 rounded-full object-cover ring-2 ring-orange-600"
                     />
                     {testimonials[currentIndex].verified && (
                       <div className="absolute -bottom-1 -right-1 bg-green-500 rounded-full p-0.5">
@@ -249,19 +252,21 @@ const Testimonial = () => {
             </AnimatePresence>
           </div>
 
+          {/* নেভিগেশন এরো – ডার্ক অরেঞ্জ */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 bg-white shadow-lg rounded-full p-2 text-orange-500 hover:bg-orange-500 hover:text-white transition-all z-10"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 bg-orange-800 shadow-lg rounded-full p-2 text-white hover:bg-orange-700 transition-all z-10"
           >
             <ChevronLeft size={20} />
           </button>
           <button
             onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 bg-white shadow-lg rounded-full p-2 text-orange-500 hover:bg-orange-500 hover:text-white transition-all z-10"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 bg-orange-800 shadow-lg rounded-full p-2 text-white hover:bg-orange-700 transition-all z-10"
           >
             <ChevronRight size={20} />
           </button>
 
+          {/* ডট ইন্ডিকেটর */}
           <div className="flex justify-center gap-2 mt-8">
             {testimonials.map((_, idx) => (
               <motion.button
@@ -269,7 +274,7 @@ const Testimonial = () => {
                 onClick={() => goToTestimonial(idx)}
                 className={`transition-all rounded-full ${
                   currentIndex === idx
-                    ? "w-2.5 h-2.5 bg-orange-500"
+                    ? "w-2.5 h-2.5 bg-orange-700"
                     : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
                 }`}
                 whileHover={{ scale: 1.2 }}
@@ -280,6 +285,7 @@ const Testimonial = () => {
           </div>
         </div>
 
+        {/* ট্রাস্ট ব্যাজ – ডার্ক অরেঞ্জ বর্ডার */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -287,7 +293,7 @@ const Testimonial = () => {
           transition={{ delay: 0.2, type: "spring" }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex flex-wrap items-center justify-center gap-4 md:gap-6 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-orange-100">
+          <div className="inline-flex flex-wrap items-center justify-center gap-4 md:gap-6 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-orange-300">
             <div className="flex items-center gap-2">
               <span className="text-yellow-500 text-lg">⭐</span>
               <span className="text-gray-700 text-sm font-semibold">4.9/5</span>

@@ -19,12 +19,12 @@ const Founders = () => {
       name: "Roni Shil",
       role: "Co-Founder & CEO",
       description:
-        "Passionate about health and nutrition, Ayan leads the vision of making protein snacks accessible and delicious for everyone.",
+        "Passionate about health and nutrition, Roni drives innovation and ensures every product meets the highest quality standards.",
       avatar: "src/assets/img.jpeg",
       social: {
-        linkedin: "https://linkedin.com/in/priya",
-        twitter: "https://twitter.com/priya",
-        instagram: "https://instagram.com/priya",
+        linkedin: "https://linkedin.com/in/roni",
+        twitter: "https://twitter.com/roni",
+        instagram: "https://instagram.com/roni",
       },
     },
   ];
@@ -47,13 +47,12 @@ const Founders = () => {
   };
 
   return (
-    <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-white to-orange-50 relative overflow-hidden">
-      {/* Decorative background blobs – orange/yellow to match theme */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000" />
+    <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-orange-50 via-white to-amber-50 relative overflow-hidden">
+      {/* Decorative blobs – dark orange (same as testimonial & review) */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-orange-800 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +62,7 @@ const Founders = () => {
         >
           <h2 className="text-3xl md:text-5xl font-black text-gray-800">
             Meet Our{" "}
-            <span className="bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-700 to-orange-500 bg-clip-text text-transparent">
               Founders
             </span>
           </h2>
@@ -73,7 +72,6 @@ const Founders = () => {
           </p>
         </motion.div>
 
-        {/* Founders Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -86,16 +84,16 @@ const Founders = () => {
               key={idx}
               variants={cardVariants}
               whileHover={{ y: -8 }}
-              className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-6 md:p-8 border border-orange-100 group"
+              className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-6 md:p-8 border border-orange-200 group"
             >
               <div className="flex flex-col items-center text-center">
-                {/* Avatar with orange gradient ring on hover */}
                 <div className="relative">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400 to-yellow-400 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Avatar hover ring – dark orange gradient */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-700 to-orange-500 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <img
                     src={founder.avatar}
                     alt={founder.name}
-                    className="w-32 h-32 rounded-full object-cover border-4 border-orange-200 group-hover:border-orange-400 transition-all duration-300 relative z-10"
+                    className="w-32 h-32 rounded-full object-cover border-4 border-orange-200 group-hover:border-orange-500 transition-all duration-300 relative z-10"
                   />
                 </div>
                 <h3 className="mt-6 text-2xl font-bold text-gray-800">
@@ -106,13 +104,13 @@ const Founders = () => {
                   {founder.description}
                 </p>
 
-                {/* Social Links – text only, no icons */}
+                {/* Social links – dark orange text */}
                 <div className="flex gap-4 mt-6">
                   <a
                     href={founder.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-orange-600 font-medium hover:text-orange-800 transition-colors"
+                    className="text-orange-700 font-medium hover:text-orange-800 transition-colors"
                   >
                     LinkedIn
                   </a>
@@ -121,7 +119,7 @@ const Founders = () => {
                     href={founder.social.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-orange-600 font-medium hover:text-orange-800 transition-colors"
+                    className="text-orange-700 font-medium hover:text-orange-800 transition-colors"
                   >
                     Twitter
                   </a>
@@ -130,7 +128,7 @@ const Founders = () => {
                     href={founder.social.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-orange-600 font-medium hover:text-orange-800 transition-colors"
+                    className="text-orange-700 font-medium hover:text-orange-800 transition-colors"
                   >
                     Instagram
                   </a>
@@ -140,7 +138,7 @@ const Founders = () => {
           ))}
         </motion.div>
 
-        {/* Our Story Button – matches the orange/yellow button style */}
+        {/* Our Story Button – dark orange gradient */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -151,7 +149,7 @@ const Founders = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group relative px-8 py-3 bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all overflow-hidden"
+            className="group relative px-8 py-3 bg-gradient-to-r from-orange-700 to-orange-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all overflow-hidden"
           >
             <span className="relative z-10 flex items-center gap-2">
               Our Story

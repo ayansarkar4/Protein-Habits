@@ -1,21 +1,16 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Ourproduct from "./components/Ourproduct";
-import Testimonial from "./components/Testmonial";
-import Founders from "./components/Founders";
-import Review from "./components/Review";
 import Footer from "./components/Footer";
 
 const App = () => {
   return (
     <div>
       <Navbar />
-      <Hero />
-      <Ourproduct />
-      <Testimonial />
-      <Founders />
-      <Review />
+
+      {/* This is where pages will render */}
+      <Outlet />
+
       <Footer />
     </div>
   );

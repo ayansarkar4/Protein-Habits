@@ -5,11 +5,12 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      {/* This is where pages will render */}
-      <Outlet />
+      <main className="flex-grow pt-16 md:pt-20">
+        <Outlet />
+      </main>
 
       <Footer />
     </div>

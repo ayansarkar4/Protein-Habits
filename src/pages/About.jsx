@@ -9,19 +9,19 @@ import {
   CheckCircle,
 } from "lucide-react";
 
-// Sample images (replace with your own assets)
+// Images (free Unsplash – replace with your own)
 const heroImage =
-  "https://images.unsplash.com/photo-1565373676635-6c47efd5b6ef?w=1200&auto=format"; // healthy snacks assortment
+  "https://images.unsplash.com/photo-1565373676635-6c47efd5b6ef?w=1200&auto=format";
 const storyImage =
-  "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=800&auto=format"; // protein laddus
+  "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=800&auto=format";
 const productImage1 =
-  "https://images.unsplash.com/photo-1604079628040-94301d2e44c9?w=600&auto=format"; // nuts and seeds
+  "https://images.unsplash.com/photo-1604079628040-94301d2e44c9?w=600&auto=format";
 const productImage2 =
-  "https://images.unsplash.com/photo-1621447506855-9ea1c1f2d95e?w=600&auto=format"; // protein bar
+  "https://images.unsplash.com/photo-1621447506855-9ea1c1f2d95e?w=600&auto=format";
 const productImage3 =
-  "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=600&auto=format"; // energy balls
+  "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=600&auto=format";
 const teamImage =
-  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format"; // team of founders
+  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format";
 
 const About = () => {
   const fadeUp = {
@@ -44,8 +44,12 @@ const About = () => {
   };
 
   return (
-    <div className="pt-20 bg-gradient-to-b from-orange-50 to-white">
-      {/* Hero Section */}
+    <div className="pt-20 bg-gradient-to-br from-orange-50 via-white to-amber-50 relative overflow-hidden">
+      {/* Decorative blobs – matching other sections */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-orange-800 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000" />
+
+      {/* Hero Section – keep as is but adjust text gradient to dark orange */}
       <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -86,7 +90,7 @@ const About = () => {
             viewport={{ once: true }}
             variants={fadeUp}
           >
-            <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">
+            <span className="text-orange-600 font-semibold text-sm uppercase tracking-wider">
               Our Story
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-800 mt-2">
@@ -96,8 +100,7 @@ const About = () => {
               Protein Habits was born from a simple idea:{" "}
               <strong>healthy snacking shouldn't be boring or expensive</strong>
               . We wanted to create a range of protein-packed snacks that are
-              not only nutritious but also delicious and affordable for
-              everyone.
+              nutritious, delicious, and affordable for everyone.
             </p>
             <p className="text-gray-600 mt-3 leading-relaxed">
               From our signature <strong>Protein Laddus</strong> to crunchy nut
@@ -126,8 +129,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission & Values */}
-      <section className="py-16 bg-orange-50">
+      {/* Mission & Values – updated card styling to match other sections */}
+      <section className="py-16 bg-orange-50/50">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <motion.div
             initial="hidden"
@@ -137,7 +140,7 @@ const About = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-black text-gray-800">
-              Our <span className="text-orange-500">Core Values</span>
+              Our <span className="text-orange-600">Core Values</span>
             </h2>
             <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
               What drives us every day.
@@ -153,17 +156,17 @@ const About = () => {
           >
             {[
               {
-                icon: <Leaf className="w-10 h-10 text-orange-500" />,
+                icon: <Leaf className="w-10 h-10 text-orange-600" />,
                 title: "100% Natural",
                 desc: "Only real ingredients – no artificial colors, flavors, or preservatives.",
               },
               {
-                icon: <Zap className="w-10 h-10 text-orange-500" />,
+                icon: <Zap className="w-10 h-10 text-orange-600" />,
                 title: "High Protein",
                 desc: "Each snack is packed with plant-based protein to keep you energized.",
               },
               {
-                icon: <Heart className="w-10 h-10 text-orange-500" />,
+                icon: <Heart className="w-10 h-10 text-orange-600" />,
                 title: "Made with Love",
                 desc: "Small-batch crafted to ensure quality and taste in every bite.",
               },
@@ -172,7 +175,7 @@ const About = () => {
                 key={idx}
                 variants={cardVariants}
                 whileHover={{ y: -5 }}
-                className="bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-xl transition-all border border-orange-100"
+                className="bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-xl transition-all border border-orange-200"
               >
                 <div className="flex justify-center mb-4">{item.icon}</div>
                 <h3 className="text-xl font-bold text-gray-800">
@@ -185,7 +188,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Product Range */}
+      {/* Product Range – card styling updated */}
       <section className="py-16 md:py-20 px-4 md:px-8 max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -227,7 +230,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
               whileHover={{ y: -8 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-orange-100"
+              className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-orange-200"
             >
               <div className="h-56 overflow-hidden">
                 <img
@@ -251,8 +254,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Affordability & Commitment */}
-      <section className="py-16 bg-gradient-to-r from-orange-500 to-yellow-400 text-white">
+      {/* Affordability & Commitment – dark orange gradient */}
+      <section className="py-16 bg-gradient-to-r from-orange-700 to-orange-500 text-white">
         <div className="max-w-7xl mx-auto px-4 md:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -285,7 +288,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team / Founders (optional) */}
+      {/* Team Section – updated styling */}
       <section className="py-16 md:py-20 px-4 md:px-8 max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -295,7 +298,7 @@ const About = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-black text-gray-800">
-            Meet the <span className="text-orange-500">People Behind</span>{" "}
+            Meet the <span className="text-orange-600">People Behind</span>{" "}
             Protein Habits
           </h2>
           <p className="text-gray-600 mt-2">
@@ -344,7 +347,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
+      {/* Call to Action – dark orange gradient button */}
       <section className="py-16 bg-orange-100">
         <div className="max-w-4xl mx-auto text-center px-4">
           <motion.div
@@ -362,7 +365,7 @@ const About = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-6 bg-gradient-to-r from-orange-500 to-yellow-400 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2"
+              className="mt-6 bg-gradient-to-r from-orange-700 to-orange-500 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2"
             >
               Shop Now
               <ArrowRight size={18} />

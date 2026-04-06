@@ -95,7 +95,6 @@ const Testimonial = () => {
 
   return (
     <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-orange-50 via-white to-amber-50 relative overflow-hidden">
-      {/* ডেকোরেটিভ ব্লব – ডার্ক অরেঞ্জ */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-orange-800 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000" />
 
@@ -107,7 +106,6 @@ const Testimonial = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          {/* ব্যাজ – ডার্ক অরেঞ্জ */}
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
@@ -140,7 +138,6 @@ const Testimonial = () => {
               whileHover={{ y: -8, scale: 1.02 }}
               className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-orange-200 relative overflow-hidden"
             >
-              {/* হোভার গ্রেডিয়েন্ট – ডার্ক অরেঞ্জ */}
               <div className="absolute inset-0 bg-gradient-to-r from-orange-800 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl -z-10" />
               <div className="absolute inset-[1px] bg-white rounded-2xl -z-10" />
               <div className="absolute top-4 right-4">
@@ -252,7 +249,6 @@ const Testimonial = () => {
             </AnimatePresence>
           </div>
 
-          {/* নেভিগেশন এরো – ডার্ক অরেঞ্জ */}
           <button
             onClick={prevTestimonial}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 bg-orange-800 shadow-lg rounded-full p-2 text-white hover:bg-orange-700 transition-all z-10"
@@ -266,7 +262,6 @@ const Testimonial = () => {
             <ChevronRight size={20} />
           </button>
 
-          {/* ডট ইন্ডিকেটর */}
           <div className="flex justify-center gap-2 mt-8">
             {testimonials.map((_, idx) => (
               <motion.button
@@ -285,7 +280,6 @@ const Testimonial = () => {
           </div>
         </div>
 
-        {/* ট্রাস্ট ব্যাজ – ডার্ক অরেঞ্জ বর্ডার */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}

@@ -9,6 +9,7 @@ import Products from "./pages/Products";
 import Testimonial from "./pages/Testimonial";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Ourstory from "./pages/Ourstory.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "testimonial",
         element: <Testimonial />,
+      },
+      {
+        path: "ourstory",
+        element: <Ourstory />,
       },
     ],
   },

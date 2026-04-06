@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Founders = () => {
   const founders = [
@@ -48,7 +49,7 @@ const Founders = () => {
 
   return (
     <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-orange-50 via-white to-amber-50 relative overflow-hidden">
-      {/* Decorative blobs – dark orange (same as testimonial & review) */}
+      {/* Decorative blobs */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-orange-800 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000" />
 
@@ -88,7 +89,6 @@ const Founders = () => {
             >
               <div className="flex flex-col items-center text-center">
                 <div className="relative">
-                  {/* Avatar hover ring – dark orange gradient */}
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-700 to-orange-500 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <img
                     src={founder.avatar}
@@ -104,7 +104,6 @@ const Founders = () => {
                   {founder.description}
                 </p>
 
-                {/* Social links – dark orange text */}
                 <div className="flex gap-4 mt-6">
                   <a
                     href={founder.social.linkedin}
@@ -138,7 +137,7 @@ const Founders = () => {
           ))}
         </motion.div>
 
-        {/* Our Story Button – dark orange gradient */}
+        {/* Our Story Button – fixed: Link wraps the motion.button properly */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -146,19 +145,21 @@ const Founders = () => {
           transition={{ delay: 0.4, duration: 0.5 }}
           className="flex justify-center mt-12"
         >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative px-8 py-3 bg-gradient-to-r from-orange-700 to-orange-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all overflow-hidden"
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              Our Story
-              <span className="transition-transform group-hover:translate-x-1">
-                →
+          <Link to="/ourstory">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="group relative px-8 py-3 bg-gradient-to-r from-orange-700 to-orange-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all overflow-hidden"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Our Story
+                <span className="transition-transform group-hover:translate-x-1">
+                  →
+                </span>
               </span>
-            </span>
-            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-          </motion.button>
+              <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>
